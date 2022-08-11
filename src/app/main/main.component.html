@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="header">
+        <p class="logo">WeatherApp</p>
+        <h1 class="text-center">{{ date }}</h1>
+    </div>
+
+    <div class="form">
+        <input 
+        type="text" 
+        name="location" 
+        placeholder="Enter the location..."
+        [(ngModel)]="location">
+        <button class="btn--primary" (click)="onSubmit()">Go</button>
+    </div>
+
+    <app-weather
+        *ngIf="city !== ''; else noLocation"
+        [city]="city"
+        [country]="country"
+        [weather]="currentWeather"
+        [forecastToday]="forecastToday"
+        [forecastTomorrow]="forecastTomorrow"
+        [forecast]="forecast"
+    ></app-weather>
+
+    <ng-template #noLocation>
+        <p class="text-center placeholder">Please, enter the location first</p>
+    </ng-template>
+</div>

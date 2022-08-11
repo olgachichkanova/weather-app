@@ -1,0 +1,10 @@
+<div class="weather">
+    <h2 class="text-center">{{ city }}, {{ country }}</h2>
+    <h2 class="accent--text text-center">{{ weather | number: '1.0-0' }}&deg;C</h2>
+
+    <mat-tab-group>
+        <mat-tab label="Today"> <app-forecast [forecast]="forecastToday"></app-forecast> </mat-tab>
+        <mat-tab label="Tomorrow"> <app-forecast [forecast]="forecastTomorrow"></app-forecast> </mat-tab>
+        <mat-tab label="10 days"> <app-forecast [forecast]="forecast" [isDaily]="false"></app-forecast> </mat-tab>
+    </mat-tab-group>
+</div>

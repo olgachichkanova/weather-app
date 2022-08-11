@@ -1,0 +1,12 @@
+ul {
+    margin-top: 20px;
+
+    li {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        p {
+            width: 30%;
+        }
+    }
+}

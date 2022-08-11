@@ -1,0 +1,15 @@
+<ul class="forecast" *ngIf="isDaily">
+    <li *ngFor="let item of forecast">
+        <p class="label">{{item.time | date:'HH:MM'}}</p>
+        <p>{{item.temp_c | number: '1.0-0'}}&deg;C</p>
+        <p>{{item.condition.text}}</p>
+    </li>
+</ul>
+
+<ul class="forecast" *ngIf="!isDaily">
+    <li *ngFor="let item of forecast">
+        <p class="label">{{item.date}}</p>
+        <p>{{item.day.avgtemp_c | number: '1.0-0'}}&deg;C</p>
+        <p>{{item.day.condition.text}}</p>
+    </li>
+</ul>
